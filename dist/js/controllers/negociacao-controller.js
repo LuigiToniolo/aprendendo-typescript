@@ -9,6 +9,9 @@ export class NegociacaoController {
     }
     adiciona() {
         const negociacao = this.criaNegociacao();
+        negociacao.data.setDate(12);
+        //negociacao.data = new Data(); --> não vai aceitar, pois é readonly.
+        //se colocar um push ou um 'pop', o desenvolvedor irá saber que é apenas para leitura.
         this.negociacoes.adiciona(negociacao);
         console.log(this.negociacoes.lista());
         this.limparFormulario();
